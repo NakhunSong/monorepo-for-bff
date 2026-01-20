@@ -1,0 +1,19 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Todo App",
+  description: "Hono RPC + Next.js BFF 모노레포 예제",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="ko">
+      <body className="min-h-screen bg-gray-50">{children}</body>
+    </html>
+  );
+}
