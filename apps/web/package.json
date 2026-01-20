@@ -1,0 +1,10 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Web dev server - to be implemented'",
+    "build": "echo 'Web build - to be implemented'",
+    "type-check": "tsc --noEmit"
+  }
+}

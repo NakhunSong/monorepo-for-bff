@@ -1,0 +1,10 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'API dev server - to be implemented'",
+    "build": "echo 'API build - to be implemented'",
+    "type-check": "tsc --noEmit"
+  }
+}
