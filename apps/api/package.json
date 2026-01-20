@@ -15,20 +15,23 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsup",
     "start": "node dist/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@hono/node-server": "^1.13.0",
     "@hono/zod-validator": "^0.4.0",
     "@repo/shared": "workspace:*",
     "hono": "^4.6.0"
   },
   "devDependencies": {
+    "@hono/node-server": "^1.19.9",
     "@repo/config": "workspace:*",
     "@types/node": "^22.0.0",
     "tsup": "^8.3.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "vitest": "^4.0.17"
   }
 }
