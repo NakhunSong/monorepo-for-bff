@@ -1,6 +1,5 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
-import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { zValidator } from "@hono/zod-validator";
 import {
@@ -16,15 +15,6 @@ let todos: Todo[] = [];
 
 // 미들웨어
 app.use("*", logger());
-app.use(
-  "*",
-  cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
-    allowMethods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
-    allowHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
 
 // 헬스 체크
 app.get("/health", (c) => {
@@ -113,7 +103,7 @@ const todoRoutes = app
 export type AppType = typeof todoRoutes;
 
 // 서버 시작
-const port = Number(process.env.PORT) || 3001;
+const port = Number(process.env.PORT) || 4001;
 
 console.log(`🚀 Server is running on http://localhost:${port}`);
 

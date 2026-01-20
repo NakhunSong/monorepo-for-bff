@@ -1,8 +1,7 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useRef, useEffect } from "react";
 import { createTodoAction, type ActionState } from "../services";
-import { useRef, useEffect } from "react";
 
 const initialState: ActionState = { success: false, message: "" };
 
@@ -33,9 +32,13 @@ export function TodoForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="px-6 py-3 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="w-20 py-3 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
       >
-        {isPending ? "추가 중..." : "추가"}
+        {isPending ? (
+          <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+        ) : (
+          "추가"
+        )}
       </button>
     </form>
   );

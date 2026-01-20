@@ -1,13 +1,20 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["NODE_ENV"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "dist/**", "!.next/cache/**"]
+      "outputs": [".next/**", "dist/**", "!.next/cache/**"],
+      "env": ["API_URL"]
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": ["API_URL", "PORT"]
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "env": ["API_URL", "PORT"]
     },
     "lint": {
       "dependsOn": ["^build"]
